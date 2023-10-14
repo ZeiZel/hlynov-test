@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		// папка сборки
+		"outDir": "./dist/",
+		// алиас путей
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [
+				"./src/*"
+			]
+		},
+		// явно пишем any, если не знаем, какой тип указать
+		"noImplicitAny": true,
+		"module": "ESNext",
+		"target": "ESNext",
+		"jsx": "react-jsx",
+		"strict": true,
+		"moduleResolution": "node",
+		// если потрбуеются commonjs пакеты
+		"esModuleInterop": true,
+		// настройка для дефолтного импорта
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true
+	}
+}
