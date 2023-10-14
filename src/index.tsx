@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { LayoutProvider, ThemeProvider } from '@/app/providers';
+import { LayoutProvider, ThemeProvider, StoreProvider, ErrorBoundary } from '@/app/providers';
 import { App } from '@/app/App';
 import '@/app/styles/index.scss';
 
@@ -14,12 +14,16 @@ if (!container) {
 const root: Root = createRoot(container);
 root.render(
 	<StrictMode>
-		<BrowserRouter>
-			<ThemeProvider>
-				<LayoutProvider>
-					<App />
-				</LayoutProvider>
-			</ThemeProvider>
-		</BrowserRouter>
+		<ErrorBoundary>
+			<StoreProvider>
+				<BrowserRouter>
+					<ThemeProvider>
+						<LayoutProvider>
+							<App />
+						</LayoutProvider>
+					</ThemeProvider>
+				</BrowserRouter>
+			</StoreProvider>
+		</ErrorBoundary>
 	</StrictMode>,
 );
