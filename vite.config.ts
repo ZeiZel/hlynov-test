@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [react(), reactRefresh()],
 	define: {
 		__API__: JSON.stringify('https://rickandmortyapi.com/api'),
+		__IS_DEV__: JSON.stringify(true),
 	},
 	resolve: {
 		alias: [{ find: '@', replacement: '/src' }],
