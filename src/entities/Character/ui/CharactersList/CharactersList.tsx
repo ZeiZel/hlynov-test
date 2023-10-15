@@ -6,7 +6,6 @@ import {
 	characterActions,
 	CharacterCard,
 	CharacterDescription,
-	getSelectedChar,
 	getSelectedPage,
 	useGetCharacterListQuery,
 } from '@/entities/Character';
@@ -16,7 +15,7 @@ export const CharactersList = () => {
 	const dispatch = useAppDispatch();
 	const selectedPage = useAppSelector(getSelectedPage);
 	const {
-		data: characters = { results: [], info: {} },
+		data: characters,
 		isLoading,
 		isError,
 		isSuccess,
