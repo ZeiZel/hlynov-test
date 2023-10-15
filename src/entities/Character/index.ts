@@ -7,4 +7,9 @@ export * from './model/const/gender.const';
 
 export * from './model/slice/character.slice';
 
+export * from './model/selectors/getSelectedPage.selector';
+export * from './model/selectors/getSelectedChar.select';
+
 export * from './api/character.api';
+
+export * from './ui';

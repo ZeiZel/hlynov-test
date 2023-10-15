@@ -1,14 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CharacterSchema } from '@/entities/Character';
 
-const initialState: CharacterSchema = {}
+const initialState: CharacterSchema = {};
 
 const characterSlice = createSlice({
 	name: 'character',
 	initialState,
 	reducers: {
-		selectCharacter: (state, action) => {}
-	}
+		selectCharacter: (state: CharacterSchema, action: PayloadAction<number>) => {
+			state.selectedId = action.payload;
+		},
+		selectPage: (state: CharacterSchema, action: PayloadAction<number>) => {
+			state.selectedPage = action.payload;
+		},
+	},
 });
 
 export const { actions: characterActions } = characterSlice;

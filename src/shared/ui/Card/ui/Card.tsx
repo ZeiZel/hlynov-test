@@ -13,6 +13,7 @@ export const Card = ({
 		<div
 			className={cn(styles.card, className, {
 				[styles.primary]: appearance === 'primary',
+				[styles.selected]: appearance === 'selected',
 				[styles.secondary]: appearance === 'secondary',
 				[styles.ghost]: appearance === 'ghost',
 			})}

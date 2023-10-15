@@ -1,0 +1,15 @@
+.characters {
+	@apply mb-10;
+
+	&__data {
+		@apply flex flex-row;
+	}
+
+	&__list {
+		@apply flex flex-wrap gap-3 mb-10;
+	}
+
+	&__pagination {
+		@apply flex justify-center items-center;
+	}
+}

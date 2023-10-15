@@ -5,3 +5,8 @@
 .primary {
 	background: var(--bg-primary);
 }
+
+.selected {
+	background: var(--bg-secondary);
+	box-shadow: var(--primary-shadow);
+}
