@@ -1,13 +1,12 @@
-import { ICharacter } from '@/entities/Character';
+import { ICharacter, ICharacterFilter } from '@/entities/Character';
+import { Info } from '@/shared/types';
 
 export interface ICharacterRequest {
-	name?: string;
-	status?: 'alive' | 'dead' | 'unknown';
-	species?: string;
-	type?: string;
-	gender?: 'female' | 'male' | 'genderless' | 'unknown';
+	id?: number;
 }
 export interface ICharacterResponse extends ICharacter {}
+
+export interface ICharacterFilterRequest extends ICharacterFilter {}
 
 export interface IMultipleCharacterRequest {
 	id: number[];
@@ -16,11 +15,7 @@ export interface IMultipleCharacterResponse {
 	result?: ICharacter[];
 }
 
-export interface ICharacterListRequest {}
-export interface ICharacterListResponse {
-	info?: string;
-	count?: number;
-	pages?: number;
-	next?: number;
-	result: ICharacter[];
+export interface ICharacterListRequest {
+	page?: number;
 }
+export interface ICharacterListResponse extends Info<ICharacter[]> {}

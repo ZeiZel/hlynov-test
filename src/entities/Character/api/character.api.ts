@@ -4,33 +4,44 @@ import {
 	ICharacter,
 	ICharacterListRequest,
 	ICharacterListResponse,
-	ICharacterRequest,
+	ICharacterFilterRequest,
 	ICharacterResponse,
 	IMultipleCharacterRequest,
 	IMultipleCharacterResponse,
+	ICharacterRequest,
 } from '@/entities/Character';
 import { QueryReturnValue } from '@reduxjs/toolkit/dist/query/baseQueryTypes';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query/react';
+import { Endpoints } from '@/shared/const';
 
 const characterApi = rtkApi.injectEndpoints({
 	endpoints: ({ query }) => ({
-		/* получаем либо одного персонажа, либо по фильтрам */
+		/* получаем одного персонажа */
 		getCharacter: query<ICharacterResponse, ICharacterRequest>({
-			query: ({ name, status, species, type, gender }) => ({
-				url: '/character',
+			query: ({ id }) => ({
+				url: `/${Endpoints.CHARACTER}/${id}`,
+			}),
+		}),
+		/* получаем персонажей по фильтрам */
+		getFilteredCharacter: query<ICharacterListResponse, ICharacterFilterRequest>({
+			query: ({ name, status, species, type, gender, page }) => ({
+				url: `/${Endpoints.CHARACTER}`,
 				params: {
-					name: name || '',
-					status: status || '',
-					species: species || '',
-					type: type || '',
-					gender: gender || '',
+					name: name ?? '',
+					status: status ?? '',
+					species: species ?? '',
+					type: type ?? '',
+					gender: gender ?? '',
 				},
 			}),
 		}),
 		/* получаем список персонажей */
 		getCharacterList: query<ICharacterListResponse, ICharacterListRequest>({
-			query: ({}) => ({
-				url: '/character',
+			query: ({ page }) => ({
+				url: `/${Endpoints.CHARACTER}`,
+				params: {
+					page: page ?? '',
+				},
 			}),
 		}),
 		/* получаем несколько персонажей */
@@ -45,7 +56,7 @@ const characterApi = rtkApi.injectEndpoints({
 			> => {
 				try {
 					const response: ICharacter[] = await fetchBaseApi<ICharacter[]>({
-						url: `/character/${id.join(',')}`,
+						url: `/${Endpoints.CHARACTER}/${id.join(',')}`,
 					});
 
 					return buildRtkResponse({

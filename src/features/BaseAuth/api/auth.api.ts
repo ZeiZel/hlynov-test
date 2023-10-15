@@ -2,19 +2,21 @@ import { rtkApi, buildRtkResponse, EResponseType } from '@/shared/api';
 import { IBaseAuthRequest, IBaseAuthResponse } from '@/features/BaseAuth';
 import { QueryReturnValue } from '@reduxjs/toolkit/dist/query/baseQueryTypes';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query/react';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const';
 
 const authApi = rtkApi.injectEndpoints({
 	endpoints: ({ mutation }) => ({
 		authUser: mutation<IBaseAuthResponse, IBaseAuthRequest>({
-			queryFn: async ({ login, password }): Promise<QueryReturnValue<IBaseAuthResponse, FetchBaseQueryError>> => {
+			queryFn: async ({
+				login,
+				password,
+			}): Promise<QueryReturnValue<IBaseAuthResponse, FetchBaseQueryError>> => {
 				try {
 					/* тут мы типа отправляем запрос на авторизацию и всё происходит успешно */
-
-					if (!login || !password) {
-						throw new Error('К сожалению, не были переданы данные');
-					}
-
-					localStorage.setItem('token', btoa(`${login}:${password}`));
+					localStorage.setItem(
+						USER_LOCALSTORAGE_KEY,
+						btoa(`${login}:${password}`),
+					);
 
 					return buildRtkResponse({
 						type: EResponseType.FULFILLED,
