@@ -1,3 +1,19 @@
 .header {
+	@apply w-full mb-6;
 
+	&__actions {
+		@apply flex items-center justify-between;
+	}
+
+	&__nav {
+		@apply flex justify-between w-full;
+	}
+
+	&__left {
+		@apply flex gap-2;
+	}
+
+	&__right {
+		@apply flex gap-2;
+	}
 }

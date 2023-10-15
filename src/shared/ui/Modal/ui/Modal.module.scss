@@ -1,0 +1,14 @@
+.modal {
+	&__overlay {
+		position: absolute;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100vh;
+		height: 100vh;
+
+		background: rgba(0, 0, 0, 0.4);
+	}
+}

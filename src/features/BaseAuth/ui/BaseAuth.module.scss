@@ -1,0 +1,7 @@
+.auth {
+	@apply flex flex-col items-center gap-6 p-10;
+
+	&__form {
+		@apply flex flex-col gap-6;
+	}
+}
