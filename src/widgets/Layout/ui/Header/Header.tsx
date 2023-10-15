@@ -34,13 +34,18 @@ export const Header = ({ className }: IHeaderProps) => {
 			<Card className={styles.header__actions}>
 				<nav className={styles.header__nav}>
 					<div className={styles.header__left}>
-						{navRoutes.map(
-							(route) =>
+						{navRoutes.map((route) =>
+							loginState ? (
+								<Link key={route.id} to={route.to}>
+									<Button>{route.label}</Button>
+								</Link>
+							) : (
 								!route.auth && (
 									<Link key={route.id} to={route.to}>
 										<Button>{route.label}</Button>
 									</Link>
-								),
+								)
+							),
 						)}
 					</div>
 					<div className={styles.header__right}>

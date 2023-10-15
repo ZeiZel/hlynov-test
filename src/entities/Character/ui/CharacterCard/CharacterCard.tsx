@@ -3,6 +3,11 @@ import styles from './CharacterCard.module.scss';
 import { ICharacterCardProps } from './CharacterCard.props';
 import { Card } from '@/shared/ui';
 
-export const CharacterCard = ({}: ICharacterCardProps) => {
+export const CharacterCard = ({
+	status,
+	episode,
+	gender,
+	created,
+}: ICharacterCardProps) => {
 	return <Card></Card>;
 };
