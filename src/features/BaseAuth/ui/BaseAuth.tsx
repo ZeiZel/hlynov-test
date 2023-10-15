@@ -1,5 +1,4 @@
 import React from 'react';
-import { redirect } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './BaseAuth.module.scss';
 import { IAuthForm, useAuthUserMutation } from '@/features/BaseAuth';
@@ -10,9 +9,9 @@ export const BaseAuth = () => {
 
 	const [fetchAuth] = useAuthUserMutation();
 
-	const onSubmit = async (data: IAuthForm) => {
-		const response = await fetchAuth(data);
-		redirect('/');
+	const onSubmit = (data: IAuthForm) => {
+		fetchAuth(data);
+		window.location.replace('/');
 	};
 
 	return (

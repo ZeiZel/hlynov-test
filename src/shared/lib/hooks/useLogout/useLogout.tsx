@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/app/providers/StoreProvider';
 import { authActions, getUserAuthState } from '@/features/BaseAuth';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const';
 
 interface IUseLogout {
 	status: boolean;
@@ -11,6 +12,7 @@ export const useLogout = (): IUseLogout => {
 	const userLoginState = useAppSelector(getUserAuthState);
 
 	const logoutUser = () => {
+		localStorage.removeItem(USER_LOCALSTORAGE_KEY);
 		dispatch(authActions.setUserAuthState(false));
 		location.reload();
 	};

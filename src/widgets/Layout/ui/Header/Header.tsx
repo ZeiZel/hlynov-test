@@ -14,7 +14,7 @@ import {
 } from '@/app/providers/router/model/const';
 import { useAppSelector } from '@/app/providers/StoreProvider';
 import { getUserAuthState } from '@/features/BaseAuth';
-import { useLogout } from '@/shared/lib/hooks';
+import { useLogin, useLogout } from '@/shared/lib/hooks';
 import { Button, Card } from '@/shared/ui';
 
 const navRoutes = [
@@ -26,7 +26,7 @@ const navRoutes = [
 ];
 
 export const Header = ({ className }: IHeaderProps) => {
-	const userLoginState = useAppSelector(getUserAuthState);
+	const { loginState } = useLogin();
 	const { logoutUser } = useLogout();
 
 	return (
@@ -45,7 +45,7 @@ export const Header = ({ className }: IHeaderProps) => {
 					</div>
 					<div className={styles.header__right}>
 						<div className={styles.header__login}>
-							{!!userLoginState ? (
+							{!!loginState ? (
 								<Button onClick={logoutUser}>{'Выйти'}</Button>
 							) : (
 								<Link to={getRouteLogin()}>
