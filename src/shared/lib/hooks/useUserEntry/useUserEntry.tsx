@@ -1,27 +1,21 @@
+import { useState, useEffect } from 'react';
 import { FIRST_USER_ENTRY } from '@/shared/const';
-import { useEffect, useState } from 'react';
 
-interface IUseUserEntry {
-	firstEntry: boolean;
-}
-
-export const useUserEntry = (): IUseUserEntry => {
-	const entry = localStorage.getItem(FIRST_USER_ENTRY);
-
-	const [firstEntry, setFirstEntry] = useState<boolean>(false);
+export const useUserEntry = () => {
+	const [firstEntry, setFirstEntry] = useState<boolean>(
+		!!JSON.parse(localStorage.getItem(FIRST_USER_ENTRY) ?? 'true'),
+	);
 
 	useEffect(() => {
-		if (entry === null) {
-			localStorage.setItem(FIRST_USER_ENTRY, JSON.stringify(true));
+		const storedValue = localStorage.getItem(FIRST_USER_ENTRY);
+		if (!storedValue) {
+			localStorage.setItem(FIRST_USER_ENTRY, 'true');
 			setFirstEntry(true);
-		} else if (entry === 'true') {
-			localStorage.setItem(FIRST_USER_ENTRY, JSON.stringify(false));
-			setFirstEntry(false);
 		} else {
-			localStorage.setItem(FIRST_USER_ENTRY, JSON.stringify(false));
+			localStorage.setItem(FIRST_USER_ENTRY, 'false');
 			setFirstEntry(false);
 		}
-	}, []);
+	}, [firstEntry]);
 
 	return { firstEntry };
 };

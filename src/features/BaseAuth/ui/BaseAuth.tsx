@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './BaseAuth.module.scss';
 import { IAuthForm, useAuthUserMutation } from '@/features/BaseAuth';
@@ -19,12 +19,14 @@ export const BaseAuth = () => {
 			<HTag tag={'h3'}>Авторизация</HTag>
 			<form className={styles.auth__form} onSubmit={handleSubmit(onSubmit)}>
 				<Input
+					type={'text'}
 					placeholder={'логин'}
 					{...register('login', {
 						required: { value: true, message: 'Заполните логин' },
 					})}
 				/>
 				<Input
+					type={'password'}
 					placeholder={'пароль'}
 					{...register('password', {
 						required: { value: true, message: 'Заполните пароль' },

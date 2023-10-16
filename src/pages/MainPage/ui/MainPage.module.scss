@@ -1,0 +1,26 @@
+.main {
+	@apply flex flex-col items-center content-center mb-5;
+
+	&__modal {
+		@apply p-10;
+	}
+
+	&__title {
+	}
+
+	&__block {
+		@apply flex flex-col p-10;
+
+		div {
+			@apply flex flex-row gap-10;
+
+			img {
+				border-radius: 15px;
+			}
+		}
+	}
+
+	&__subtitle {
+		@apply mb-5;
+	}
+}

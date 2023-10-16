@@ -1,8 +1,18 @@
 .characters {
 	@apply mb-10;
 
+	&__title {
+		@apply mb-5;
+	}
+
 	&__data {
-		@apply flex flex-row;
+		@apply flex flex-row relative;
+	}
+
+	&__description {
+		position: sticky;
+		height: fit-content;
+		top: 40px;
 	}
 
 	&__list {

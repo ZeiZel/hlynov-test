@@ -1,14 +1,26 @@
+
 .modal {
 	&__overlay {
 		position: absolute;
+
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
-		width: 100vh;
+		width: 100vw;
 		height: 100vh;
 
-		background: rgba(0, 0, 0, 0.4);
+		background: rgba(0, 0, 0, 0.8);
+
+		overflow: hidden;
+	}
+
+	&__content {
+		max-width: 900px;
 	}
 }

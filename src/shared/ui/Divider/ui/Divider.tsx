@@ -5,5 +5,5 @@ interface IDividerProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRElement> {}
 
 export const Divider = ({ className, ...props }: IDividerProps) => {
-	return <hr className={cn(className, 'm-5')} {...props} />;
+	return <hr className={cn(className, 'm-5 w-full border-[#4d5054]')} {...props} />;
 };

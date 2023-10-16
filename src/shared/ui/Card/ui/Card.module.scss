@@ -1,5 +1,7 @@
 .card {
 	@apply p-2 rounded-xl;
+
+	box-shadow: var(--primary-shadow);
 }
 
 .primary {

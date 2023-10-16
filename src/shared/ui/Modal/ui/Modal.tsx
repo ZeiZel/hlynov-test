@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'clsx';
 import styles from './Modal.module.scss';
 import { ICardProps } from './Modal.props';
@@ -19,6 +19,14 @@ export const Modal = ({
 		customCallback?.();
 	};
 
+	useEffect(() => {
+		if (showModal) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+	}, []);
+
 	return (
 		<div className={cn(className, styles.modal)} {...props}>
 			{label && <Button onClick={toggleModal}>{label}</Button>}
@@ -29,7 +37,7 @@ export const Modal = ({
 				})}
 				onClick={toggleModal}
 			>
-				{children}
+				<div className={styles.modal__content}>{children}</div>
 			</div>
 		</div>
 	);

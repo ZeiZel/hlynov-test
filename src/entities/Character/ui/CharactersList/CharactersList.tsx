@@ -10,6 +10,7 @@ import {
 	useGetCharacterListQuery,
 } from '@/entities/Character';
 import { useQueryLoading } from '@/shared/lib/hooks';
+import { HTag } from '@/shared/ui';
 
 export const CharactersList = () => {
 	const dispatch = useAppDispatch();
@@ -28,6 +29,9 @@ export const CharactersList = () => {
 
 	return (
 		<div className={styles.characters}>
+			<HTag tag={'h1'} className={styles.characters__title}>
+				Персонажи
+			</HTag>
 			<div className={styles.characters__data}>
 				<div className={styles.characters__list}>
 					{characters?.results?.map((char) => <CharacterCard {...char} />)}
