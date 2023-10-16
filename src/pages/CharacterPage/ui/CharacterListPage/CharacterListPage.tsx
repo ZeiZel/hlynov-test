@@ -1,7 +1,7 @@
 import React from 'react';
 import { CharactersList } from '@/entities/Character';
 
-const CharacterPage = () => {
+const CharacterListPage = () => {
 	return (
 		<div>
 			<CharactersList />
@@ -9,4 +9,4 @@ const CharacterPage = () => {
 	);
 };
 
-export default CharacterPage;
+export default CharacterListPage;

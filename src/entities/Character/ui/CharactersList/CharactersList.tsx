@@ -34,7 +34,9 @@ export const CharactersList = () => {
 			</HTag>
 			<div className={styles.characters__data}>
 				<div className={styles.characters__list}>
-					{characters?.results?.map((char) => <CharacterCard {...char} />)}
+					{characters?.results?.map((char) => (
+						<CharacterCard key={char.id} {...char} />
+					))}
 				</div>
 				<div className={styles.characters__description}>
 					<CharacterDescription />

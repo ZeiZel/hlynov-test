@@ -6,20 +6,18 @@ import { IHeaderProps } from './Header.props';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import {
 	getRouteAbout,
-	getRouteCharacter,
+	getRouteCharacterList,
 	getRouteEpisode,
 	getRouteLocation,
 	getRouteLogin,
 	getRouteMain,
 } from '@/app/providers/router/model/const';
-import { useAppSelector } from '@/app/providers/StoreProvider';
-import { getUserAuthState } from '@/features/BaseAuth';
 import { useLogin, useLogout } from '@/shared/lib/hooks';
 import { Button, Card } from '@/shared/ui';
 
 const navRoutes = [
 	{ id: 1, to: getRouteMain(), label: 'Главная', auth: false },
-	{ id: 2, to: getRouteCharacter(), label: 'Персонажи', auth: true },
+	{ id: 2, to: getRouteCharacterList(), label: 'Персонажи', auth: true },
 	{ id: 3, to: getRouteLocation(), label: 'Локации', auth: true },
 	{ id: 4, to: getRouteEpisode(), label: 'Эпизоды', auth: true },
 	{ id: 5, to: getRouteAbout(), label: 'О приложении', auth: false },

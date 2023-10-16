@@ -2,7 +2,9 @@ import React from 'react';
 import styles from './CharacterDescription.module.scss';
 import { useAppSelector } from '@/app/providers/StoreProvider';
 import { getSelectedChar, useGetCharacterQuery } from '@/entities/Character';
-import { Card } from '@/shared/ui';
+import { Button, Card } from '@/shared/ui';
+import { Link } from 'react-router-dom';
+import { getRouteCharacter } from '@/app/providers/router/model/const';
 
 export const CharacterDescription = () => {
 	const selectedChar = useAppSelector(getSelectedChar);
@@ -17,7 +19,7 @@ export const CharacterDescription = () => {
 		return <div>Loading...</div>;
 	}
 
-	const { image, name, type, status, created, gender, origin, species } = character;
+	const { id, image, name, type, status, created, gender, origin, species } = character;
 
 	return (
 		<Card className={styles.character}>
@@ -31,6 +33,9 @@ export const CharacterDescription = () => {
 				<span>Создан: {created}</span>
 				<span>Пол: {gender}</span>
 			</div>
+			<Button>
+				<Link to={getRouteCharacter(id.toString())}>Подробнее</Link>
+			</Button>
 		</Card>
 	);
 };

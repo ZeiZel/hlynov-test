@@ -3,6 +3,7 @@ import {
 	AppRoutes,
 	getRouteAbout,
 	getRouteCharacter,
+	getRouteCharacterList,
 	getRouteEpisode,
 	getRouteForbidden,
 	getRouteLocation,
@@ -17,7 +18,7 @@ import { AppRouteProps } from '@/app/providers/router';
 import { LoginPageAsync } from '@/pages/LoginPage';
 import { EpisodePageAsync } from '@/pages/EpisodePage';
 import { AboutPageAsync } from '@/pages/AboutPage';
-import { CharacterPageAsync } from '@/pages/CharacterPage';
+import { CharacterListPageAsync, CharacterPageAsync } from '@/pages/CharacterPage';
 import { LocationPageAsync } from '@/pages/LocationPage';
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
@@ -42,8 +43,13 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 		authOnly: true,
 	},
 	[AppRoutes.CHARACTER]: {
-		path: getRouteCharacter(),
+		path: getRouteCharacter(':id'),
 		element: <CharacterPageAsync />,
+		authOnly: true,
+	},
+	[AppRoutes.CHARACTER_LIST]: {
+		path: getRouteCharacterList(),
+		element: <CharacterListPageAsync />,
 		authOnly: true,
 	},
 	[AppRoutes.LOCATION]: {

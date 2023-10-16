@@ -1,0 +1,11 @@
+.character {
+	@apply flex flex-col gap-10 p-10;
+
+	&__image {
+		@apply rounded-md overflow-hidden;
+	}
+
+	&__description {
+		@apply flex flex-row items-center content-center gap-10;
+	}
+}

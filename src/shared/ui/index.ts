@@ -6,3 +6,5 @@ export * from './Modal';
 export * from './AppLink';
 export * from './Input';
 export * from './Icon';
+export * from './Properties';
+export * from './Divider';
