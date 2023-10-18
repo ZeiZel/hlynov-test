@@ -1,1 +1,12 @@
-.app.dark {}
+.app.dark {
+	--text-main: #e1e1e1;
+	--text-secondary: #a9a9a9;
+
+	--primary: #c38233;
+	--primary-hover: #8e6126;
+	--primary-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+
+	--bg-app: #252525;
+	--bg-primary: #5a5a5a;
+	--bg-secondary: #4c4c4c;
+}

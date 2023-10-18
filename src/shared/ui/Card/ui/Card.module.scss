@@ -1,0 +1,14 @@
+.card {
+	@apply p-2 rounded-xl;
+
+	box-shadow: var(--primary-shadow);
+}
+
+.primary {
+	background: var(--bg-primary);
+}
+
+.selected {
+	background: var(--bg-secondary);
+	box-shadow: var(--primary-shadow);
+}

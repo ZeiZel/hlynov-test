@@ -1,0 +1,15 @@
+.heading {
+	@apply font-bold;
+
+	color: var(--text-main);
+}
+
+.h1 {
+	@apply text-4xl;
+}
+
+.h2 {}
+.h3 { @apply text-2xl; }
+.h4 {}
+.h5 {}
+.h6 {}

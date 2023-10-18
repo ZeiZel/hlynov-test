@@ -1,0 +1,12 @@
+.character {
+	@apply flex flex-col;
+	width: 300px;
+
+	&__image {
+		@apply rounded-2xl overflow-hidden;
+	}
+
+	&__description {
+		@apply flex flex-col;
+	}
+}
