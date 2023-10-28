@@ -8,7 +8,7 @@
 
 Используемое [API](https://rickandmortyapi.com/documentation/#filter-episodes)
 
-Готовый клиент от [автора](https://github.com/afuh/rick-and-morty-api-node) апихи
+Готовый [клиент](https://github.com/afuh/rick-and-morty-api-node) от автора апихи
 
 ## Запуск проекта
 
