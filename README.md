@@ -7,6 +7,7 @@
 Для отправки запросов использовался RTK Query
 
 Используемое [API](https://rickandmortyapi.com/documentation/#filter-episodes)
+
 Готовый клиент от [автора](https://github.com/afuh/rick-and-morty-api-node) апихи
 
 ## Запуск проекта
