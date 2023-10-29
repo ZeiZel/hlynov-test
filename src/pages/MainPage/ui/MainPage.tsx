@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './MainPage.module.scss';
-import { Card, HTag, Icon, Modal, P } from '@/shared/ui';
 import { useUserEntry } from '@/shared/lib/hooks';
-import { EIcons } from '@/shared/ui/Icon/ui/Icon.props';
+import { Card, HTag, Icon, EIcons, Modal, P } from '@/shared/ui';
 
 const MainPage = () => {
 	const { firstEntry } = useUserEntry();
@@ -29,7 +28,7 @@ const MainPage = () => {
 							уверенной точки роста!
 						</P>
 						<br />
-						<P className={styles.main__paragraph}>
+						<P>
 							И, кстати, вот твоё первое задание. Сможешь убрать эту пустую
 							линию снизу (которую должен закрывать overlay) ?
 						</P>

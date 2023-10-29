@@ -31,7 +31,7 @@ export const CharacterCard = ({
 			onClick={handleChangeChar}
 		>
 			<div className={styles.character__image}>
-				<img src={image} alt={name} height={150} />
+				<img src={image} alt={name} height={284} width={284} />
 			</div>
 			<div className={styles.character__description}>
 				<span>Имя: {name}</span>

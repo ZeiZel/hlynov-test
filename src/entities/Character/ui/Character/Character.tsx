@@ -26,7 +26,7 @@ export const Character = ({ id }: ICharacterProps) => {
 			</HTag>
 			<div className={styles.character__description}>
 				<div className={styles.character__image}>
-					<img src={character.image} alt={character.name} />
+					<img src={character.image} alt={character.name} height={284} width={284} />
 				</div>
 				<div className={styles.character__properties}>
 					{[
