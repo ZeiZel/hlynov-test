@@ -1,5 +1,5 @@
 .main {
-	@apply flex flex-col items-center content-center mb-5;
+	@apply flex flex-col items-center content-center mb-5 gap-10;
 
 	&__modal {
 		@apply p-10;

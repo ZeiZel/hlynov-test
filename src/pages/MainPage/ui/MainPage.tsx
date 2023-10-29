@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './MainPage.module.scss';
-import { Card, HTag, Icon, Modal, P } from '@/shared/ui';
 import { useUserEntry } from '@/shared/lib/hooks';
-import { EIcons } from '@/shared/ui/Icon/ui/Icon.props';
-import { Divider } from '@/shared/ui/Divider';
+import { Card, HTag, Icon, EIcons, Modal, P } from '@/shared/ui';
 
 const MainPage = () => {
 	const { firstEntry } = useUserEntry();
@@ -40,7 +38,6 @@ const MainPage = () => {
 			<HTag tag={'h1'} className={styles.main__title}>
 				Вселенная Рика и Морти
 			</HTag>
-			<Divider />
 			<Card className={styles.main__block}>
 				<HTag tag={'h3'} className={styles.main__subtitle}>
 					О мультсериале
@@ -56,7 +53,6 @@ const MainPage = () => {
 					</P>
 				</div>
 			</Card>
-			<Divider />
 			<Card className={styles.main__block}>
 				<HTag tag={'h3'} className={styles.main__subtitle}>
 					Рик Санчез
@@ -71,7 +67,6 @@ const MainPage = () => {
 					<Icon name={EIcons.Rick} alt={'Рик'} width={400} />
 				</div>
 			</Card>
-			<Divider />
 			<Card className={styles.main__block}>
 				<HTag tag={'h3'} className={styles.main__subtitle}>
 					Морти Смит

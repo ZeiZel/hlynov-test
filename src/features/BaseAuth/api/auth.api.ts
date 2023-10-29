@@ -1,7 +1,7 @@
-import { rtkApi, buildRtkResponse, EResponseType } from '@/shared/api';
-import { IBaseAuthRequest, IBaseAuthResponse } from '@/features/BaseAuth';
 import { QueryReturnValue } from '@reduxjs/toolkit/dist/query/baseQueryTypes';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query/react';
+import { IBaseAuthRequest, IBaseAuthResponse } from '@/features/BaseAuth';
+import { rtkApi, buildRtkResponse, EResponseType } from '@/shared/api';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const';
 
 const authApi = rtkApi.injectEndpoints({
